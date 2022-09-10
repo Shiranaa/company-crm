@@ -1,0 +1,59 @@
+<form
+  [formGroup]="loginForm"
+  (ngSubmit)="onSubmit()"
+  style="width: 22rem; margin: 0 auto; padding: 20px"
+>
+  <div class="logo"></div>
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <input
+      #emailField
+      formControlName="email"
+      type="email"
+      class="form-control"
+      id="form2Example1"
+      required="true"
+    />
+    <label class="form-label" for="form2Example1">Email address</label>
+    <label class="form-validation">{{ emailValidity }}</label>
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+    <input
+      #passwordField
+      type="password"
+      id="form2Example2"
+      class="form-control"
+      formControlName="password"
+      minlength="2"
+      required="true"
+    />
+    <label class="form-label" for="form2Example2">Password</label>
+    <label class="form-validation">{{ passwordValidity }}</label>
+  </div>
+
+  <!-- 2 column grid layout for inline styling -->
+  <div class="row mb-4"></div>
+
+  <!-- Submit button -->
+  <div>
+    <button type="submit" class="btn btn-primary btn-block mb-4">
+      Sign in
+    </button>
+  </div>
+  <label class="form-validation">{{ loginResult }}</label>
+
+  <!-- Register buttons -->
+  <div class="text-center">
+    <p>
+      Not a member?
+      <a
+        routerLink="/signup-component"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Register</a
+      >
+    </p>
+  </div>
+</form>
